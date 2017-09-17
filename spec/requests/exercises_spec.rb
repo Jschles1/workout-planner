@@ -34,7 +34,7 @@ RSpec.describe 'Exercises API', type: :request do
     }
 
     context 'upon a valid request' do
-      before { post "/api/workouts/#{workout_id}/exercises" }
+      before { post "/api/workouts/#{workout_id}/exercises", params: valid_attributes }
 
       it 'returns a status code 201' do
         expect(response).to have_http_status(201)
