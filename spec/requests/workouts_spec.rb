@@ -55,7 +55,9 @@ RSpec.describe 'Workouts API', type: :request do
       before { post "/api/workouts/", params: invalid_attributes }
 
       it 'returns a status code 422' do
-        expect(response.to have_http_status(422))
+        expect(response).to have_http_status(422)
+      end
     end
   end
+
 end
