@@ -11,17 +11,13 @@ RSpec.describe 'Exercises API', type: :request do
   describe 'GET /api/workouts/:workout_id/exercises' do
     before { get "/api/workouts/#{workout_id}/exercises" }
 
-    context 'if the workout exists' do
-      it 'returns a status code 200' do
-        expect(response).to have_http_status(200)
-      end
-
-      it 'returns all of the workout\'s exercises' do
-        expect(json.size).to eq(5)
-      end
+    it 'returns a status code 200' do
+      expect(response).to have_http_status(200)
     end
 
-
+    it 'returns all of the workout\'s exercises' do
+      expect(json.size).to eq(5)
+    end
   end
 
 end
