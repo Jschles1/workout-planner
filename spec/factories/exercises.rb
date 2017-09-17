@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :exercises do
+  factory :exercise do
     name { Faker::Lorem.word }
     workout_id nil
     reps { Faker::Number.between(1, 30) }
