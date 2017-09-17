@@ -14,6 +14,11 @@ class API::ExercisesController < ApplicationController
     end
   end
 
+  def destroy
+    @exercise = @workout.exercises.find_by!(id: params[:id]) if @workout
+    @exercise.destroy
+  end
+
   private
 
   def exercise_params
