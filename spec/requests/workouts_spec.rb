@@ -68,4 +68,13 @@ RSpec.describe 'Workouts API', type: :request do
     end
   end
 
+  # DELETE /api/workouts/:id
+  describe 'DELETE /api/workouts/:id' do
+    before { delete "/api/workouts/#{workout_id}" }
+
+    it 'returns a status code 204' do
+      expect(response).to have_http_status(204)
+    end
+  end
+
 end
