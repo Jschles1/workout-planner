@@ -7,7 +7,11 @@ class API::ExercisesController < ApplicationController
 
   def create
     @exercise = @workout.exercises.create(exercise_params)
-    render json: @exercise, status: 201
+    if @exercise.save
+      render json: @exercise, status: 201
+    else
+      render json: { errors: @exercise.errors }, status: 422
+    end
   end
 
   private
