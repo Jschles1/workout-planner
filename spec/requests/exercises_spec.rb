@@ -20,4 +20,18 @@ RSpec.describe 'Exercises API', type: :request do
     end
   end
 
+  # POST /api/workouts/:workout_id/exercises
+  describe 'POST /api/workouts/:workout_id/exercises' do
+    let(:valid_attributes) {
+      {
+        exercise: {
+          name: Faker::Lorem.word
+          reps: Faker::Number.between(1, 30)
+          sets: Faker::Number.between(1, 10)
+          rest_period: { Faker::Number.between(10, 1000)
+        }
+      }
+    }
+  end
+
 end
