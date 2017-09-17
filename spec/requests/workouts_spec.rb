@@ -36,10 +36,10 @@ RSpec.describe 'Workouts API', type: :request do
   # POST /api/workouts
   describe 'POST /api/workouts' do
     let(:valid_attributes) {
-      { title: Faker::Lorem.word }
+      { workout: { title: Faker::Lorem.word } }
     }
     let(:invalid_attributes) {
-      { title: "" }
+      { workout: { title: "" } }
     }
 
     context 'upon a valid request' do    
@@ -49,6 +49,10 @@ RSpec.describe 'Workouts API', type: :request do
         expect(response).to have_http_status(200)
       end
 
+      it 'creates a workout and returns the JSON object' do
+        expect(json[:title]).to eq(valid_attributes[:workout][:title])
+        expect(json[:id]).not_to eq(nil)
+      end
     end
 
     context 'upon an invalid request' do

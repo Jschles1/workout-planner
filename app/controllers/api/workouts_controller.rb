@@ -12,7 +12,7 @@ class API::WorkoutsController < ApplicationController
   def create
     @workout = Workout.new(workout_params)
     if @workout.save
-      render status: 200
+      render json: @workout, status: 200
     else
       render status: 422
     end
@@ -21,6 +21,6 @@ class API::WorkoutsController < ApplicationController
   private
 
   def workout_params
-    params.permit(:title)
+    params.require(:workout).permit(:title)
   end
 end
