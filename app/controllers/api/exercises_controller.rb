@@ -2,7 +2,7 @@ class API::ExercisesController < ApplicationController
   before_action :set_workout
 
   def index
-    render status: 200
+    render json: @workout.exercises, status: 200
   end
 
   private

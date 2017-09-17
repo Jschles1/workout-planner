@@ -15,6 +15,10 @@ RSpec.describe 'Exercises API', type: :request do
       it 'returns a status code 200' do
         expect(response).to have_http_status(200)
       end
+
+      it 'returns all of the workout\'s exercises' do
+        expect(json.size).to eq(5)
+      end
     end
 
 
