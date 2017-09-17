@@ -32,4 +32,30 @@ RSpec.describe 'Workouts API', type: :request do
       expect(json[:id]).to eq(workout_id)
     end
   end
+
+  # POST /api/workouts
+  describe 'POST /api/workouts' do
+    let(:valid_attributes) {
+      { title: Faker::Lorem.word }
+    }
+    let(:invalid_attributes) {
+      { title: "" }
+    }
+
+    context 'upon a valid request' do    
+      before { post "/api/workouts/", params: valid_attributes }
+    
+      it 'returns a status code 200' do
+        expect(response).to have_http_status(200)
+      end
+
+    end
+
+    context 'upon an invalid request' do
+      before { post "/api/workouts/", params: invalid_attributes }
+
+      it 'returns a status code 422' do
+        expect(response.to have_http_status(422))
+    end
+  end
 end
