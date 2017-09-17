@@ -61,6 +61,10 @@ RSpec.describe 'Workouts API', type: :request do
       it 'returns a status code 422' do
         expect(response).to have_http_status(422)
       end
+
+      it 'returns error messages in JSON' do
+        expect(json[:errors][:title]).to eq(["can't be blank"])
+      end
     end
   end
 

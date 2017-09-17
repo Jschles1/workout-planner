@@ -14,7 +14,7 @@ class API::WorkoutsController < ApplicationController
     if @workout.save
       render json: @workout, status: 200
     else
-      render status: 422
+      render json: { errors: @workout.errors }, status: 422
     end
   end
 
