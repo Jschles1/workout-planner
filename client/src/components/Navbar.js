@@ -7,7 +7,8 @@ export default class Navbar extends React.PureComponent {
     return (
       <div>
         <Menu>
-          <Menu.Item as={NavLink} to='/' name="Home" />
+          <Menu.Item as={NavLink} to='/' name="Home"/>
+          <Menu.Item as={NavLink} to='/workouts' name="Workouts"/>
         </Menu>
         <br/>
       </div>
