@@ -1,4 +1,4 @@
 class Workout < ApplicationRecord
   has_many :exercises, dependent: :destroy
-  validates :title, presence: true
+  validates :title, :workout_type, presence: true
 end
