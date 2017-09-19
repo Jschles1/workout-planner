@@ -10,9 +10,30 @@ export default class WorkoutsForm extends React.Component {
       workoutType: ''
     }
   }
+
+  handleOnChange(event) {
+    const { name, value } = event.target; 
+    this.setState({
+      [name]: value
+    })
+  }
+
   render() {
     return(
-      <div></div>
+      <div>
+        <h1>Create a New Workout:</h1>
+        <Form>
+          <Form.Field>
+            <label>Workout Title:</label>
+            <input name="title" onChange={(event) => this.handleOnChange(event)} placeholder="Workout Title"/>
+          </Form.Field>
+          <Form.Field>
+            <label>Workout Type:</label>
+            <input name="workoutType" onChange={(event) => this.handleOnChange(event)} placeholder="Workout Type"/>
+          </Form.Field>
+          <Button type="submit">Submit</Button>
+        </Form>
+      </div>
     );
   }
 }
