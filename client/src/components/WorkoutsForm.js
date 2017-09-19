@@ -21,11 +21,15 @@ class WorkoutsForm extends React.Component {
     })
   }
 
+  handleOnSubmit(event) {
+    event.preventDefault();
+  }
+
   render() {
     return(
       <div>
         <h1>Create a New Workout:</h1>
-        <Form>
+        <Form onSubmit={(event) => this.handleOnSubmit(event)}>
           <Form.Field>
             <label>Workout Title:</label>
             <input name="title" onChange={(event) => this.handleOnChange(event)} placeholder="Workout Title"/>

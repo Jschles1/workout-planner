@@ -6,7 +6,7 @@ class WorkoutsPage extends React.Component {
   render() {
     return(
       <div>
-        <WorkoutsList/>
+        <WorkoutsList workouts={this.props.workouts}/>
       </div>
     );
   }
