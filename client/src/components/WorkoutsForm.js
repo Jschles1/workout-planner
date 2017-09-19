@@ -1,9 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import * as actions from '../actions/workoutActions';
 import { bindActionCreators } from 'redux';
 import { Form, Button } from 'semantic-ui-react';
 
-export default class WorkoutsForm extends React.Component {
+class WorkoutsForm extends React.Component {
   constructor(props) {
     super(props);
 
@@ -39,3 +40,13 @@ export default class WorkoutsForm extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return { workouts: state.workouts }
+}
+
+const mapDispactchToProps = (dispatch) => {
+  return { actions: bindActionCreators(actions, dispatch) }
+}
+
+export default connect(mapStateToProps, mapDispactchToProps)(WorkoutsForm);
