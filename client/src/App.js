@@ -5,6 +5,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Welcome from './components/Welcome';
 import WorkoutsPage from './components/WorkoutsPage';
+import WorkoutsForm from './components/WorkoutsForm';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
             <Navbar/>
             <Route exact path="/" component={Welcome}/>
             <Route exact path="/workouts" component={WorkoutsPage}/>
+            <Route exact path="/workouts/new" component={WorkoutsForm}/>
           </div>
         </Router>
       </div>

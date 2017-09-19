@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu } from 'semantic-ui-react';
+import { Menu, Icon } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 
 export default class Navbar extends React.PureComponent {
@@ -7,8 +7,12 @@ export default class Navbar extends React.PureComponent {
     return (
       <div>
         <Menu>
-          <Menu.Item as={NavLink} to='/' name="Home"/>
+          <Menu.Item header>Workout Planner</Menu.Item>
+          <Menu.Item as={NavLink} to='/'>
+            <Icon name="home"/> 
+          </Menu.Item>
           <Menu.Item as={NavLink} to='/workouts' name="Workouts"/>
+          <Menu.Item as={NavLink} to='/workouts/new' name="Create New Workout"/>
         </Menu>
         <br/>
       </div>
