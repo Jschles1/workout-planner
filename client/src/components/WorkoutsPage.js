@@ -1,9 +1,19 @@
 import React from 'react';
-
-export default class WorkoutsPage extends React.Component {
+import { connect } from 'react-redux';
+import WorkoutsList from './WorkoutsList'
+// Responsible for connecting to our store and loading our list of workouts
+class WorkoutsPage extends React.Component {
   render() {
     return(
-      <div></div>
+      <div>
+        <WorkoutsList/>
+      </div>
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return { workouts: state.workouts };
+}
+
+export default connect(mapStateToProps)(WorkoutsPage);
