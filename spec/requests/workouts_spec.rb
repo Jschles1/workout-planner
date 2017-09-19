@@ -38,10 +38,10 @@ RSpec.describe 'Workouts API', type: :request do
   # POST /api/workouts
   describe 'POST /api/workouts' do
     let(:valid_attributes) {
-      { workout: { title: Faker::Lorem.word } }
+      { workout: { title: Faker::Lorem.word, workout_type: Faker::Lorem.word } }
     }
     let(:invalid_attributes) {
-      { workout: { title: "" } }
+      { workout: { title: "", workout_type: "" } }
     }
 
     context 'upon a valid request' do    
@@ -53,6 +53,7 @@ RSpec.describe 'Workouts API', type: :request do
 
       it 'creates a workout and returns the JSON object' do
         expect(json[:title]).to eq(valid_attributes[:workout][:title])
+        expect(json[:workout_type]).to eq(valid_attributes[:workout][:workout_type])
         expect(json[:id]).not_to eq(nil)
       end
     end
@@ -66,6 +67,7 @@ RSpec.describe 'Workouts API', type: :request do
 
       it 'returns error messages in JSON' do
         expect(json[:errors][:title]).to eq(["can't be blank"])
+        expect(json[:errors][:workout_type]).to eq(["can't be blank"])
       end
     end
   end

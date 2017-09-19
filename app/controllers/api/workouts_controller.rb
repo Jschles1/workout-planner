@@ -26,6 +26,6 @@ class API::WorkoutsController < ApplicationController
   private
 
   def workout_params
-    params.require(:workout).permit(:title)
+    params.require(:workout).permit(:title, :workout_type)
   end
 end
