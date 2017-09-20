@@ -23,6 +23,11 @@ class WorkoutsForm extends React.Component {
 
   handleOnSubmit(event) {
     event.preventDefault();
+    this.props.actions.submitNewWorkout(this.state, this.props.history);
+    this.setState({
+      title: '',
+      workout_type: ''
+    });
   }
 
   render() {
