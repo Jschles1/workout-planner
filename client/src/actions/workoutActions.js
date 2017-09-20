@@ -1,5 +1,14 @@
 import fetch from 'isomorphic-fetch';
 
+export function fetchWorkouts() {
+  return function(dispatch) {
+    dispatch({type: 'LOADING_WORKOUTS'})
+    return fetch(`/api/books`)
+      .then(res => res.json())
+      .then(workouts => dispatch({type: 'FETCH_WORKOUTS', payload: workouts}))
+  }
+}
+
 export function submitNewWorkout(data, history) {
   return function(dispatch) {
     return fetch(`/api/workouts`, {
