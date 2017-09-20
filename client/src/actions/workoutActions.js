@@ -3,8 +3,8 @@ import fetch from 'isomorphic-fetch';
 export function fetchWorkouts() {
   return function(dispatch) {
     dispatch({type: 'LOADING_WORKOUTS'})
-    return fetch(`/api/books`)
-      .then(res => res.json())
+    return fetch(`/api/workouts`)
+      .then(resp => resp.json())
       .then(workouts => dispatch({type: 'FETCH_WORKOUTS', payload: workouts}))
   }
 }
