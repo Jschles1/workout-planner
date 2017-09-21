@@ -10,6 +10,7 @@ export default class FormInput extends React.PureComponent {
         <Input 
           value={inputValue} 
           size={inputSize} 
+          type={inputType}
           name={inputName} 
           onChange={updateField} 
           placeholder={inputPlaceholder}

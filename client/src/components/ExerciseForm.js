@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/exerciseActions';
 import { bindActionCreators } from 'redux';
 import { Form, Button, Label, Icon, Input } from 'semantic-ui-react';
+import FormInput from './FormInput';
 
 class ExerciseForm extends React.Component {
   constructor(props) {
@@ -40,14 +41,24 @@ class ExerciseForm extends React.Component {
       <div>
         <h3>Add an Exercise to this Workout:</h3>
         <Form size="mini" onSubmit={(event) => this.handleOnSubmit(event)}>
-          <Form.Field>
-            <Label color="black" pointing="below">Name:</Label>
-            <Input value={this.state.name} size="small" name="name" onChange={(event) => this.handleOnChange(event)} placeholder="Name"/>
-          </Form.Field>
-          <Form.Field>
-            <Label color="black" pointing="below">Repetitions:</Label>
-            <Input value={this.state.reps} size="small" name="reps" type="number" onChange={(event) => this.handleOnChange(event)} placeholder="Repetitions"/>
-          </Form.Field>
+          <FormInput 
+            labelName="Name:" 
+            inputValue={this.state.name} 
+            inputSize="small" 
+            inputType="text"
+            inputName="name" 
+            inputPlaceholder="Name" 
+            updateField={(event) => this.handleOnChange(event)}
+          />
+          <FormInput 
+            labelName="Repetitions:" 
+            inputValue={this.state.reps} 
+            inputSize="small" 
+            inputType="number"
+            inputName="reps" 
+            inputPlaceholder="Repetitions" 
+            updateField={(event) => this.handleOnChange(event)}
+          />
           <Form.Field>
             <Label color="black" pointing="below">Number Of Sets:</Label>
             <Input value={this.state.sets} size="small" name="sets" type="number" onChange={(event) => this.handleOnChange(event)} placeholder="Number Of Sets"/>
