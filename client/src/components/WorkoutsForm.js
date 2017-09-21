@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/workoutActions';
 import { bindActionCreators } from 'redux';
-import { Form, Button, Label, Icon } from 'semantic-ui-react';
+import { Form, Button, Label, Icon, Input } from 'semantic-ui-react';
 
 class WorkoutsForm extends React.Component {
   constructor(props) {
@@ -37,11 +37,11 @@ class WorkoutsForm extends React.Component {
         <Form onSubmit={(event) => this.handleOnSubmit(event)}>
           <Form.Field>
             <Label color="black" pointing="below">Workout Title:</Label>
-            <input name="title" onChange={(event) => this.handleOnChange(event)} placeholder="Workout Title"/>
+            <Input name="title" onChange={(event) => this.handleOnChange(event)} placeholder="Workout Title"/>
           </Form.Field>
           <Form.Field>
             <Label color="black" pointing="below">Workout Type:</Label>
-            <input name="workout_type" onChange={(event) => this.handleOnChange(event)} placeholder="Workout Type"/>
+            <Input name="workout_type" onChange={(event) => this.handleOnChange(event)} placeholder="Workout Type"/>
           </Form.Field>
           <Button color="black" content="Submit" type="submit" icon="right arrow" labelPosition="right"/>
         </Form>
