@@ -36,14 +36,14 @@ class WorkoutsForm extends React.Component {
         <h1>Create a New Workout:</h1>
         <Form onSubmit={(event) => this.handleOnSubmit(event)}>
           <Form.Field>
-            <Label color="blue" pointing="below">Workout Title:</Label>
+            <Label color="black" pointing="below">Workout Title:</Label>
             <input name="title" onChange={(event) => this.handleOnChange(event)} placeholder="Workout Title"/>
           </Form.Field>
           <Form.Field>
-            <Label color="blue" pointing="below">Workout Type:</Label>
+            <Label color="black" pointing="below">Workout Type:</Label>
             <input name="workout_type" onChange={(event) => this.handleOnChange(event)} placeholder="Workout Type"/>
           </Form.Field>
-          <Button color="blue" content="Submit" type="submit" icon="right arrow" labelPosition="right"/>
+          <Button color="black" content="Submit" type="submit" icon="right arrow" labelPosition="right"/>
         </Form>
       </div>
     );

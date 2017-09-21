@@ -41,22 +41,22 @@ class ExerciseForm extends React.Component {
         <h3>Add an Exercise to this Workout:</h3>
         <Form size="mini" onSubmit={(event) => this.handleOnSubmit(event)}>
           <Form.Field>
-            <Label color="blue" pointing="below">Name:</Label>
+            <Label color="black" pointing="below">Name:</Label>
             <Input size="small" name="name" onChange={(event) => this.handleOnChange(event)} placeholder="Name"/>
           </Form.Field>
           <Form.Field>
-            <Label color="blue" pointing="below">Repetitions:</Label>
+            <Label color="black" pointing="below">Repetitions:</Label>
             <Input  size="small" name="reps" type="number" onChange={(event) => this.handleOnChange(event)} placeholder="Repetitions"/>
           </Form.Field>
           <Form.Field>
-            <Label color="blue" pointing="below">Number Of Sets:</Label>
+            <Label color="black" pointing="below">Number Of Sets:</Label>
             <Input size="small" name="sets" type="number" onChange={(event) => this.handleOnChange(event)} placeholder="Number Of Sets"/>
           </Form.Field>
           <Form.Field>
-            <Label color="blue" pointing="below">Rest Period Between Sets:</Label>
+            <Label color="black" pointing="below">Rest Period Between Sets:</Label>
             <Input size="small" name="rest_period" type="number" onChange={(event) => this.handleOnChange(event)} placeholder="Rest Period Between Sets"/>
           </Form.Field>
-          <Button color="blue" content="Submit" type="submit" icon="right arrow" labelPosition="right"/>
+          <Button color="black" content="Submit" type="submit" icon="right arrow" labelPosition="right"/>
         </Form>
       </div>
     );
