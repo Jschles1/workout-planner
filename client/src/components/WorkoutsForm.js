@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/workoutActions';
 import { bindActionCreators } from 'redux';
 import { Form, Button, Label, Icon, Input } from 'semantic-ui-react';
+import FormInput from './FormInput';
 
 class WorkoutsForm extends React.Component {
   constructor(props) {
@@ -35,14 +36,24 @@ class WorkoutsForm extends React.Component {
       <div>
         <h1>Create a New Workout:</h1>
         <Form onSubmit={(event) => this.handleOnSubmit(event)}>
-          <Form.Field>
-            <Label color="black" pointing="below">Workout Title:</Label>
-            <Input name="title" onChange={(event) => this.handleOnChange(event)} placeholder="Workout Title"/>
-          </Form.Field>
-          <Form.Field>
-            <Label color="black" pointing="below">Workout Type:</Label>
-            <Input name="workout_type" onChange={(event) => this.handleOnChange(event)} placeholder="Workout Type"/>
-          </Form.Field>
+          <FormInput 
+            labelName="Workout Title:" 
+            inputValue={this.state.title} 
+            inputSize="medium" 
+            inputType="text"
+            inputName="title" 
+            inputPlaceholder="Workout Title" 
+            updateField={(event) => this.handleOnChange(event)}
+          />
+          <FormInput 
+            labelName="Workout Type:" 
+            inputValue={this.state.workout_type} 
+            inputSize="medium" 
+            inputType="text"
+            inputName="workout_type" 
+            inputPlaceholder="Workout Type" 
+            updateField={(event) => this.handleOnChange(event)}
+          />
           <Button color="black" content="Submit" type="submit" icon="right arrow" labelPosition="right"/>
         </Form>
       </div>
