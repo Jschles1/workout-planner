@@ -59,14 +59,24 @@ class ExerciseForm extends React.Component {
             inputPlaceholder="Repetitions" 
             updateField={(event) => this.handleOnChange(event)}
           />
-          <Form.Field>
-            <Label color="black" pointing="below">Number Of Sets:</Label>
-            <Input value={this.state.sets} size="small" name="sets" type="number" onChange={(event) => this.handleOnChange(event)} placeholder="Number Of Sets"/>
-          </Form.Field>
-          <Form.Field>
-            <Label color="black" pointing="below">Rest Period Between Sets:</Label>
-            <Input value={this.state.rest_period} size="small" name="rest_period" type="number" onChange={(event) => this.handleOnChange(event)} placeholder="Rest Period Between Sets"/>
-          </Form.Field>
+          <FormInput 
+            labelName="Number Of Sets:" 
+            inputValue={this.state.sets} 
+            inputSize="small" 
+            inputType="number"
+            inputName="sets" 
+            inputPlaceholder="Number Of Sets" 
+            updateField={(event) => this.handleOnChange(event)}
+          />
+          <FormInput 
+            labelName="Rest Period Between Sets:" 
+            inputValue={this.state.rest_period} 
+            inputSize="small" 
+            inputType="number"
+            inputName="rest_period" 
+            inputPlaceholder="Rest Period Between Sets" 
+            updateField={(event) => this.handleOnChange(event)}
+          />
           <Button color="black" content="Submit" type="submit" icon="right arrow" labelPosition="right"/>
         </Form>
       </div>
