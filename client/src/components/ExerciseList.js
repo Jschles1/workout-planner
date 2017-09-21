@@ -4,8 +4,17 @@ import { Table, Button, Icon } from 'semantic-ui-react';
 
 export default class ExerciseList extends React.Component {
   render() {
+    const renderExercises = this.props.exercises.map(exercise => {
+      return(
+        <p>{exercise.name}</p>
+      );
+    })
+
     return(
-      <div></div>
+      <div>
+        <h3>Exercises:</h3>
+        {(this.props.exercises) ? renderExercises : null}
+      </div>
     );
   }
 }
