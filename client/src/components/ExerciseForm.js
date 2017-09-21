@@ -27,7 +27,7 @@ class ExerciseForm extends React.Component {
     return(
       <div>
         <h3>Add an Exercise to this Workout:</h3>
-        <Form>
+        <Form size="tiny">
           <Form.Field>
             <Label color="blue" pointing="below">Name:</Label>
             <input name="name" onChange={(event) => this.handleOnChange(event)} placeholder="Name"/>
@@ -59,4 +59,4 @@ const mapDispactchToProps = (dispatch) => {
   return { actions: bindActionCreators(actions, dispatch) }
 }
 
-export default connect(mapStateToProps, mapDispactchToProps)(ExercisesForm);
+export default connect(mapStateToProps, mapDispactchToProps)(ExerciseForm);
