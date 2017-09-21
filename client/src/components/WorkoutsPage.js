@@ -4,6 +4,7 @@ import * as actions from '../actions/workoutActions';
 import { bindActionCreators } from 'redux';
 import WorkoutsList from './WorkoutsList'
 // Responsible for connecting to our store and loading our list of workouts
+// Note: Remember, containers are components that are directly connected to the store via the connect function.
 class WorkoutsPage extends React.Component {
 
   componentDidMount() {

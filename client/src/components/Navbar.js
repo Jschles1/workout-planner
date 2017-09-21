@@ -6,7 +6,7 @@ export default class Navbar extends React.PureComponent {
   render() {
     return (
       <div>
-        <Menu>
+        <Menu inverted>
           <Menu.Item header>Workout Planner</Menu.Item>
           <Menu.Item as={NavLink} to='/'>
             <Icon name="home"/> 

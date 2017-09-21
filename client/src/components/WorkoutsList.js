@@ -10,7 +10,7 @@ export default class WorkoutsList extends React.Component {
           <Table.Cell>{workout.title}</Table.Cell>
           <Table.Cell>{workout.workout_type}</Table.Cell>
           <Table.Cell>
-            <Button content="View Workout" color="green" icon="right arrow" labelPosition="right"/>
+            <Button as={Link} to={`/workouts/${workout.id}`} content="View Workout" color="green" icon="right arrow" labelPosition="right"/>
           </Table.Cell>
           <Table.Cell>
             <Button content="Delete Workout" color="red" icon="remove" labelPosition="right"/>

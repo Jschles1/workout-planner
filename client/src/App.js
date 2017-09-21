@@ -20,7 +20,7 @@ class App extends Component {
               <Route exact path="/workouts" component={WorkoutsPage}/>
               <Switch>
                 <Route exact path="/workouts/new" component={WorkoutsForm}/>
-                <Route exact path="/workouts/:workoutId" component={WorkoutShow}/>
+                <Route path="/workouts/:workoutId" component={WorkoutShow}/>
               </Switch>
             </Container>
           </div>
