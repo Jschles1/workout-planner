@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../actions/workoutActions';
+import * as actions from '../actions/exerciseActions';
 import { bindActionCreators } from 'redux';
-import { Form, Button, Label, Icon } from 'semantic-ui-react';
+import { Form, Button, Label, Icon, Input } from 'semantic-ui-react';
 
 class ExerciseForm extends React.Component {
   constructor(props) {
@@ -23,26 +23,38 @@ class ExerciseForm extends React.Component {
     })
   }
 
+  handleOnSubmit(event) {
+    console.log(this.state)
+    event.preventDefault();
+    this.props.actions.submitNewExercise(this.state, this.props.workoutId, this.props.history);
+    this.setState({
+      name: '',
+      reps: '',
+      sets: '',
+      rest_period: ''
+    });
+  }
+
   render() {
     return(
       <div>
         <h3>Add an Exercise to this Workout:</h3>
-        <Form size="mini">
+        <Form size="mini" onSubmit={(event) => this.handleOnSubmit(event)}>
           <Form.Field>
             <Label color="blue" pointing="below">Name:</Label>
-            <input name="name" onChange={(event) => this.handleOnChange(event)} placeholder="Name"/>
+            <Input size="small" name="name" onChange={(event) => this.handleOnChange(event)} placeholder="Name"/>
           </Form.Field>
           <Form.Field>
             <Label color="blue" pointing="below">Repetitions:</Label>
-            <input name="reps" type="number" onChange={(event) => this.handleOnChange(event)} placeholder="Repetitions"/>
+            <Input  size="small" name="reps" type="number" onChange={(event) => this.handleOnChange(event)} placeholder="Repetitions"/>
           </Form.Field>
           <Form.Field>
             <Label color="blue" pointing="below">Number Of Sets:</Label>
-            <input name="sets" type="number" onChange={(event) => this.handleOnChange(event)} placeholder="Number Of Sets"/>
+            <Input size="small" name="sets" type="number" onChange={(event) => this.handleOnChange(event)} placeholder="Number Of Sets"/>
           </Form.Field>
           <Form.Field>
             <Label color="blue" pointing="below">Rest Period Between Sets:</Label>
-            <input name="rest_period" type="number" onChange={(event) => this.handleOnChange(event)} placeholder="Rest Period Between Sets"/>
+            <Input size="small" name="rest_period" type="number" onChange={(event) => this.handleOnChange(event)} placeholder="Rest Period Between Sets"/>
           </Form.Field>
           <Button color="blue" content="Submit" type="submit" icon="right arrow" labelPosition="right"/>
         </Form>
