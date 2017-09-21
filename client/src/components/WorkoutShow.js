@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import * as actions from '../actions/exerciseActions';
+import { bindActionCreators } from 'redux';
 import ExerciseForm from './ExerciseForm';
 
 class WorkoutShow extends React.Component {
@@ -23,4 +25,8 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-export default connect(mapStateToProps, {})(WorkoutShow);
+const mapDispactchToProps = (dispatch) => {
+  return { actions: bindActionCreators(actions, dispatch) }
+}
+
+export default connect(mapStateToProps, mapDispactchToProps)(WorkoutShow);
