@@ -50,3 +50,13 @@ class ExerciseForm extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return { exercises: state.exercises }
+}
+
+const mapDispactchToProps = (dispatch) => {
+  return { actions: bindActionCreators(actions, dispatch) }
+}
+
+export default connect(mapStateToProps, mapDispactchToProps)(ExercisesForm);
