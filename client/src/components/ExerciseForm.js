@@ -42,19 +42,19 @@ class ExerciseForm extends React.Component {
         <Form size="mini" onSubmit={(event) => this.handleOnSubmit(event)}>
           <Form.Field>
             <Label color="black" pointing="below">Name:</Label>
-            <Input size="small" name="name" onChange={(event) => this.handleOnChange(event)} placeholder="Name"/>
+            <Input value={this.state.name} size="small" name="name" onChange={(event) => this.handleOnChange(event)} placeholder="Name"/>
           </Form.Field>
           <Form.Field>
             <Label color="black" pointing="below">Repetitions:</Label>
-            <Input  size="small" name="reps" type="number" onChange={(event) => this.handleOnChange(event)} placeholder="Repetitions"/>
+            <Input value={this.state.reps} size="small" name="reps" type="number" onChange={(event) => this.handleOnChange(event)} placeholder="Repetitions"/>
           </Form.Field>
           <Form.Field>
             <Label color="black" pointing="below">Number Of Sets:</Label>
-            <Input size="small" name="sets" type="number" onChange={(event) => this.handleOnChange(event)} placeholder="Number Of Sets"/>
+            <Input value={this.state.sets} size="small" name="sets" type="number" onChange={(event) => this.handleOnChange(event)} placeholder="Number Of Sets"/>
           </Form.Field>
           <Form.Field>
             <Label color="black" pointing="below">Rest Period Between Sets:</Label>
-            <Input size="small" name="rest_period" type="number" onChange={(event) => this.handleOnChange(event)} placeholder="Rest Period Between Sets"/>
+            <Input value={this.state.rest_period} size="small" name="rest_period" type="number" onChange={(event) => this.handleOnChange(event)} placeholder="Rest Period Between Sets"/>
           </Form.Field>
           <Button color="black" content="Submit" type="submit" icon="right arrow" labelPosition="right"/>
         </Form>
