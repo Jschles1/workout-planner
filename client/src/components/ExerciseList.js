@@ -13,7 +13,20 @@ export default class ExerciseList extends React.Component {
     return(
       <div>
         <h3>Exercises:</h3>
-        {(this.props.exercises) ? renderExercises : null}
+        <Table celled>
+            <Table.Header>
+              <Table.Row>
+                <Table.HeaderCell>Name:</Table.HeaderCell>
+                <Table.HeaderCell>Repetitions:</Table.HeaderCell>
+                <Table.HeaderCell>Number Of Sets:</Table.HeaderCell>
+                <Table.HeaderCell>Number Of Sets:</Table.HeaderCell>
+                <Table.HeaderCell>Delete:</Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
+            <Table.Body>
+              {(this.props.exercises) ? renderExercises : null}
+            </Table.Body>
+        </Table>
       </div>
     );
   }
