@@ -6,7 +6,15 @@ export default class ExerciseList extends React.Component {
   render() {
     const renderExercises = this.props.exercises.map(exercise => {
       return(
-        <p>{exercise.name}</p>
+        <Table.Row key={exercise.id}>
+          <Table.Cell>{exercise.name}</Table.Cell>
+          <Table.Cell>{exercise.reps}</Table.Cell>
+          <Table.Cell>{exercise.sets}</Table.Cell>
+          <Table.Cell>{exercise.rest_period}</Table.Cell>
+          <Table.Cell>
+            <Button content={<Icon name="remove"/>} color="red"/>
+          </Table.Cell>
+        </Table.Row>
       );
     })
 
@@ -19,7 +27,7 @@ export default class ExerciseList extends React.Component {
                 <Table.HeaderCell>Name:</Table.HeaderCell>
                 <Table.HeaderCell>Repetitions:</Table.HeaderCell>
                 <Table.HeaderCell>Number Of Sets:</Table.HeaderCell>
-                <Table.HeaderCell>Number Of Sets:</Table.HeaderCell>
+                <Table.HeaderCell>Rest Period:</Table.HeaderCell>
                 <Table.HeaderCell>Delete:</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
