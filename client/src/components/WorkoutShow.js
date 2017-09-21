@@ -6,6 +6,11 @@ import ExerciseForm from './ExerciseForm';
 import ExerciseList from './ExerciseList';
 
 class WorkoutShow extends React.Component {
+
+  componentDidMount() {
+    this.props.actions.fetchExercises(this.props.workout.id);
+  }
+
   render() {
     return(
       <div>
