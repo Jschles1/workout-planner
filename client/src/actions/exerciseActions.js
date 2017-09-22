@@ -27,3 +27,12 @@ export function submitNewExercise(data, workoutId, history) {
       })
   }
 }
+
+export function deleteExercise(workoutId, id) {
+  return function(dispatch) {
+    return fetch(`/api/workouts/${workoutId}/exercises/${id}`, {
+      method: 'DELETE'
+    })
+      .then(() => dispatch({type: 'DELETE_EXERCISE', workoutId: workoutId, id: id}))
+  }
+}
