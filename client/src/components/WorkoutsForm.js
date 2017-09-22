@@ -32,8 +32,12 @@ class WorkoutsForm extends React.Component {
   }
 
   render() {
+    const formStyles = {
+      maxWidth: 450
+    }
+    
     return(
-      <div>
+      <div style={formStyles}>
         <h1>Create a New Workout:</h1>
         <Form onSubmit={(event) => this.handleOnSubmit(event)}>
           <FormInput 
