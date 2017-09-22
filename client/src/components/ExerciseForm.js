@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/exerciseActions';
 import { bindActionCreators } from 'redux';
-import { Form, Button, Label, Icon, Input } from 'semantic-ui-react';
+import { Form, Button, Label, Icon, Input, Segment } from 'semantic-ui-react';
 import FormInput from './FormInput';
 
 class ExerciseForm extends React.Component {
@@ -38,11 +38,12 @@ class ExerciseForm extends React.Component {
 
   render() {
     const formStyles = {
-      maxWidth: 400
+      maxWidth: 400,
+      margin: 20
     }
 
     return(
-      <div style={formStyles}>
+      <Segment style={formStyles} raised>
         <h3>Add an Exercise to this Workout:</h3>
         <Form size="mini" onSubmit={(event) => this.handleOnSubmit(event)}>
           <FormInput 
@@ -83,7 +84,7 @@ class ExerciseForm extends React.Component {
           />
           <Button color="black" content="Submit" type="submit" icon="right arrow" labelPosition="right"/>
         </Form>
-      </div>
+      </Segment>
     );
   }
 }
