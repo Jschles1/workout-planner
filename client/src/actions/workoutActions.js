@@ -28,3 +28,11 @@ export function submitNewWorkout(data, history) {
       })
   }
 }
+
+export function deleteWorkout(id) {
+  return function(dispatch) {
+    return fetch(`/api/workouts/${id}`, {
+      method: 'DELETE'
+    })
+  }
+}
