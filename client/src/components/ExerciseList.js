@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 import { Table, Button, Icon } from 'semantic-ui-react';
 
 export default class ExerciseList extends React.Component {
+
+  handleDeleteClick(event) {
+    const id = (event.target.id)
+    console.log(event.target)
+    this.props.deleteExercise(this.props.workoutId, id);
+  }
+
   render() {
     const renderExercises = this.props.exercises.map(exercise => {
       return(
@@ -12,7 +19,7 @@ export default class ExerciseList extends React.Component {
           <Table.Cell>{exercise.sets}</Table.Cell>
           <Table.Cell>{exercise.rest_period}</Table.Cell>
           <Table.Cell>
-            <Button content={<Icon name="remove"/>} color="red"/>
+            <Button id={exercise.id} onClick={(event) => this.handleDeleteClick(event)} content="Delete Exercise" color="red"/>
           </Table.Cell>
         </Table.Row>
       );

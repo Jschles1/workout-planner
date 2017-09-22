@@ -15,7 +15,7 @@ class WorkoutShow extends React.Component {
     return(
       <div>
         <h1>{this.props.workout.title}</h1>
-        <ExerciseList exercises={this.props.exercises}/>
+        <ExerciseList exercises={this.props.exercises} workoutId={this.props.workout.id} deleteExercise={this.props.actions.deleteExercise}/>
         <ExerciseForm workoutId={this.props.workout.id}/>
       </div>
     );
