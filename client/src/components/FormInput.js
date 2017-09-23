@@ -6,7 +6,7 @@ export default class FormInput extends React.PureComponent {
     const { labelName, inputName, inputType, inputValue, inputSize, inputPlaceholder, updateField } = this.props;
     return(
       <Form.Field>
-        <Label color="black" pointing="below">{labelName}</Label>
+        <label>{labelName}</label>
         <Input 
           value={inputValue} 
           size={inputSize} 

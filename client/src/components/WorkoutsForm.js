@@ -58,7 +58,7 @@ class WorkoutsForm extends React.Component {
             inputPlaceholder="Workout Type" 
             updateField={(event) => this.handleOnChange(event)}
           />
-          <Button color="black" content="Submit" type="submit" icon="right arrow" labelPosition="right"/>
+          <Button fluid color="black" content="Submit" type="submit" icon="right arrow" labelPosition="right"/>
         </Form>
       </Segment>
     );

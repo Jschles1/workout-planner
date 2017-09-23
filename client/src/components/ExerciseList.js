@@ -19,7 +19,7 @@ export default class ExerciseList extends React.Component {
           <Table.Cell>{exercise.sets}</Table.Cell>
           <Table.Cell>{exercise.rest_period}</Table.Cell>
           <Table.Cell>
-            <Button id={exercise.id} onClick={(event) => this.handleDeleteClick(event)} content="Delete Exercise" color="red"/>
+            <Button fluid id={exercise.id} onClick={(event) => this.handleDeleteClick(event)} content="Delete Exercise" color="red"/>
           </Table.Cell>
         </Table.Row>
       );
