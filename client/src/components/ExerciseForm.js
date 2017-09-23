@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/exerciseActions';
 import { bindActionCreators } from 'redux';
-import { Form, Button, Label, Icon, Input, Segment } from 'semantic-ui-react';
+import { Form, Button, Segment } from 'semantic-ui-react';
 import FormInput from './FormInput';
 
 class ExerciseForm extends React.Component {

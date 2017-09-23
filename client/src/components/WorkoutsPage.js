@@ -14,7 +14,7 @@ class WorkoutsPage extends React.Component {
   render() {
     return(
       <div>
-        <WorkoutsList workouts={this.props.workouts} deleteWorkout={this.props.actions.deleteWorkout}/>
+        <WorkoutsList workouts={this.props.workouts} deleteWorkout={this.props.actions.deleteWorkout} fetch={this.props.actions.fetchWorkouts}/>
       </div>
     );
   }

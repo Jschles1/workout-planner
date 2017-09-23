@@ -7,7 +7,7 @@ export default class ExerciseList extends React.Component {
   handleDeleteClick(event) {
     const id = (event.target.id)
     console.log(event.target)
-    this.props.deleteExercise(this.props.workoutId, id);
+    this.props.deleteExercise(this.props.workoutId, id, this.props.fetch(this.props.workoutId));
   }
 
   render() {

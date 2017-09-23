@@ -26,14 +26,16 @@ export function submitNewWorkout(data, history) {
         dispatch({type: 'ADD_WORKOUT', payload: workout});
         history.push('/workouts');
       })
+    // .catch((error) => {callback})
   }
 }
 
-export function deleteWorkout(id) {
+export function deleteWorkout(id, callback) {
   return function(dispatch) {
     return fetch(`/api/workouts/${id}`, {
       method: 'DELETE'
     })
       .then(() => dispatch({type: 'DELETE_WORKOUT', id: id}))
+      .then(() => callback)
   }
 }

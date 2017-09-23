@@ -25,14 +25,16 @@ export function submitNewExercise(data, workoutId, history) {
       .then(exercise => {
         dispatch({type: 'ADD_EXERCISE', payload: exercise});
       })
+    // .catch((error) => {callback})
   }
 }
 
-export function deleteExercise(workoutId, id) {
+export function deleteExercise(workoutId, id, callback) {
   return function(dispatch) {
     return fetch(`/api/workouts/${workoutId}/exercises/${id}`, {
       method: 'DELETE'
     })
       .then(() => dispatch({type: 'DELETE_EXERCISE', workoutId: workoutId, id: id}))
+      .then(() => callback)
   }
 }
