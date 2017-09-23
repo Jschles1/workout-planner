@@ -36,6 +36,6 @@ export function deleteWorkout(id, callback) {
       method: 'DELETE'
     })
       .then(() => dispatch({type: 'DELETE_WORKOUT', id: id}))
-      .then(() => callback)
+      // .then(() => callback)
   }
 }

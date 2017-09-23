@@ -19,7 +19,7 @@ class WorkoutShow extends React.Component {
           exercises={this.props.exercises} 
           workoutId={this.props.workout.id} 
           deleteExercise={this.props.actions.deleteExercise}
-          fetch={this.props.actions.fetchExercises}
+          fetch={`{this.props.actions.fetchExercises}`}
         />
         <ExerciseForm workoutId={this.props.workout.id}/>
       </div>
