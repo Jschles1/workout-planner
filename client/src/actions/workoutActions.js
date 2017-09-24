@@ -37,8 +37,12 @@ export function deleteWorkout(id, callback) {
     return fetch(`/api/workouts/${id}`, {
       method: 'DELETE'
     })
-      .then(() => dispatch({type: 'DELETE_WORKOUT', id: id}))
-      // .then(() => callback)
+      .then(resp => {
+        console.log(resp)
+        dispatch({type: 'DELETE_WORKOUT', id: parseInt(id)})
+        debugger
+      })
+      .then(() => callback)
   }
 }
 

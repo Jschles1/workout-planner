@@ -1,7 +1,7 @@
 export default function exercisesReducer(state = [], action) {
   switch(action.type) {
     case 'FETCH_EXERCISES':
-    return action.payload;
+      return action.payload;
     case 'ADD_EXERCISE':
       return state.concat(action.payload);
     case 'DELETE_EXERCISE':
