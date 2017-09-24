@@ -31,13 +31,12 @@ export function submitNewExercise(data, workoutId, errorCallback) {
   }
 }
 
-export function deleteExercise(workoutId, id, callback) {
+export function deleteExercise(workoutId, id) {
   return function(dispatch) {
     return fetch(`/api/workouts/${workoutId}/exercises/${id}`, {
       method: 'DELETE'
     })
       .then(() => dispatch({type: 'DELETE_EXERCISE', workoutId: workoutId, id: parseInt(id)}))
-      .then(() => callback)
   }
 }
 

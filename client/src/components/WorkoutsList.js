@@ -8,7 +8,6 @@ export default class WorkoutsList extends React.Component {
     const id = (event.target.id)
     console.log(event.target)
     this.props.deleteWorkout(id);
-    // , this.props.fetch()
   }
 
   render() {

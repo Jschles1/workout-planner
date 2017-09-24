@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom';
 import { Table, Button, Icon } from 'semantic-ui-react';
 
 export default class ExerciseList extends React.Component {
-  // Not rerendering b/c this isn't connected to store
+  
   handleDeleteClick(event) {
     const id = (event.target.id)
     console.log(event.target)
     this.props.deleteExercise(this.props.workoutId, id);
-    // , this.props.fetch(this.props.workoutId)
   }
 
   render() {

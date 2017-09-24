@@ -32,7 +32,7 @@ export function submitNewWorkout(data, history, errorCallback) {
   }
 }
 
-export function deleteWorkout(id, callback) {
+export function deleteWorkout(id) {
   return function(dispatch) {
     return fetch(`/api/workouts/${id}`, {
       method: 'DELETE'
@@ -40,7 +40,6 @@ export function deleteWorkout(id, callback) {
       .then(resp => {
         console.log(resp)
         dispatch({type: 'DELETE_WORKOUT', id: parseInt(id)})
-        debugger
       })
       .then(() => callback)
   }
