@@ -4,6 +4,7 @@ import * as actions from '../actions/workoutActions';
 import { bindActionCreators } from 'redux';
 import { Form, Button, Segment } from 'semantic-ui-react';
 import FormInput from './FormInput';
+import FormError from './FormError';
 
 class WorkoutsForm extends React.Component {
   constructor(props) {
@@ -11,7 +12,8 @@ class WorkoutsForm extends React.Component {
 
     this.state = {
       title: '',
-      workout_type: ''
+      workout_type: '',
+      error: false
     }
   }
 
@@ -24,7 +26,11 @@ class WorkoutsForm extends React.Component {
 
   handleOnSubmit(event) {
     event.preventDefault();
-    this.props.actions.submitNewWorkout(this.state, this.props.history);
+    this.props.actions.submitNewWorkout(this.state, this.props.history, (() => {
+      this.setState({
+        error: true
+      });
+    }));
     this.setState({
       title: '',
       workout_type: ''
@@ -39,6 +45,7 @@ class WorkoutsForm extends React.Component {
     return(
       <Segment style={formStyles} raised>
         <h1>Create a New Workout:</h1>
+        {this.state.error === true ? <FormError/> : null}
         <Form onSubmit={(event) => this.handleOnSubmit(event)}>
           <FormInput 
             labelName="Workout Title:" 
