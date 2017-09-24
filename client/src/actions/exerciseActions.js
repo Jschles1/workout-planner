@@ -9,7 +9,7 @@ export function fetchExercises(workoutId) {
   }
 }
 
-export function submitNewExercise(data, workoutId, callback) {
+export function submitNewExercise(data, workoutId, errorCallback) {
   return function(dispatch) {
     return fetch(`/api/workouts/${workoutId}/exercises`, {
       method: 'POST',

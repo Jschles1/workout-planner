@@ -4,6 +4,7 @@ import * as actions from '../actions/exerciseActions';
 import { bindActionCreators } from 'redux';
 import { Form, Button, Segment } from 'semantic-ui-react';
 import FormInput from './FormInput';
+import FormError from './FormError';
 
 class ExerciseForm extends React.Component {
   constructor(props) {
@@ -13,7 +14,8 @@ class ExerciseForm extends React.Component {
       name: '',
       reps: '',
       sets: '',
-      rest_period: ''
+      rest_period: '',
+      error: false
     }
   }
 
@@ -27,12 +29,17 @@ class ExerciseForm extends React.Component {
   handleOnSubmit(event) {
     console.log(this.state)
     event.preventDefault();
-    this.props.actions.submitNewExercise(this.state, this.props.workoutId, this.props.history);
+    this.props.actions.submitNewExercise(this.state, this.props.workoutId, (() => {
+      this.setState({
+        error: true
+      });
+    }));
     this.setState({
       name: '',
       reps: '',
       sets: '',
-      rest_period: ''
+      rest_period: '',
+      error: false
     });
   }
 
@@ -45,6 +52,7 @@ class ExerciseForm extends React.Component {
     return(
       <Segment style={formStyles} raised>
         <h3>Add an Exercise to this Workout:</h3>
+        {this.state.error === true ? <FormError/> : null}
         <Form size="mini" onSubmit={(event) => this.handleOnSubmit(event)}>
           <FormInput 
             labelName="Name:" 
