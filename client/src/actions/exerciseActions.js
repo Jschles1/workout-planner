@@ -9,7 +9,7 @@ export function fetchExercises(workoutId) {
   }
 }
 
-export function submitNewExercise(data, workoutId, history) {
+export function submitNewExercise(data, workoutId, callback) {
   return function(dispatch) {
     return fetch(`/api/workouts/${workoutId}/exercises`, {
       method: 'POST',
@@ -18,14 +18,16 @@ export function submitNewExercise(data, workoutId, history) {
       },
       body: JSON.stringify(data)
     })
+      .then(handleErrors)
       .then(resp => {
-        dispatch({type: 'SUCCESS'});
         return resp.json();
       })
       .then(exercise => {
         dispatch({type: 'ADD_EXERCISE', payload: exercise});
       })
-    // .catch((error) => {callback})
+    .catch((error) => {
+      errorCallback()
+    })
   }
 }
 
@@ -37,4 +39,11 @@ export function deleteExercise(workoutId, id, callback) {
       .then(() => dispatch({type: 'DELETE_EXERCISE', workoutId: workoutId, id: id}))
       // .then(() => callback)
   }
+}
+
+function handleErrors(response) {
+  if (!response.ok) {
+    throw Error(response.statusText);
+  }
+  return response;
 }
