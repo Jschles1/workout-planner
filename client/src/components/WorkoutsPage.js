@@ -10,11 +10,16 @@ class WorkoutsPage extends React.Component {
   componentDidMount() {
     this.props.actions.fetchWorkouts();
   }
+
+  handleDeleteClick = (event) => {
+    const id = (event.target.id)
+    this.props.actions.deleteWorkout(id);
+  }
   
   render() {
     return(
       <div>
-        <WorkoutsList workouts={this.props.workouts} deleteWorkout={this.props.actions.deleteWorkout} fetch={this.props.actions.fetchWorkouts}/>
+        <WorkoutsList workouts={this.props.workouts} deleteWorkout={(event) => this.handleDeleteClick(event)}/>
       </div>
     );
   }
