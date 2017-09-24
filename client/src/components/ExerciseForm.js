@@ -19,14 +19,14 @@ class ExerciseForm extends React.Component {
     }
   }
 
-  handleOnChange(event) {
+  handleOnChange = (event) => {
     const { name, value } = event.target; 
     this.setState({
       [name]: value
     })
   }
 
-  handleOnSubmit(event) {
+  handleOnSubmit = (event) => {
     console.log(this.state)
     event.preventDefault();
     this.props.actions.submitNewExercise(this.state, this.props.workoutId, (() => {

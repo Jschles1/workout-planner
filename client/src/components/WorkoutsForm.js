@@ -17,14 +17,14 @@ class WorkoutsForm extends React.Component {
     }
   }
 
-  handleOnChange(event) {
+  handleOnChange = (event) => {
     const { name, value } = event.target; 
     this.setState({
       [name]: value
     })
   }
 
-  handleOnSubmit(event) {
+  handleOnSubmit = (event) => {
     event.preventDefault();
     this.props.actions.submitNewWorkout(this.state, this.props.history, (() => {
       this.setState({
