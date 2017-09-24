@@ -11,6 +11,11 @@ class WorkoutShow extends React.Component {
     this.props.actions.fetchExercises(this.props.workout.id);
   }
 
+  handleDeleteClick = (event) => {
+    const id = (event.target.id)
+    this.props.actions.deleteExercise(this.props.workout.id, id);
+  }
+
   render() {
     return(
       <div>
@@ -18,7 +23,7 @@ class WorkoutShow extends React.Component {
         <ExerciseList 
           exercises={this.props.exercises} 
           workoutId={this.props.workout.id} 
-          deleteExercise={this.props.actions.deleteExercise}
+          deleteExercise={(event) => this.handleDeleteClick(event)}
         />
         <ExerciseForm workoutId={this.props.workout.id}/>
       </div>
