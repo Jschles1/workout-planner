@@ -38,10 +38,8 @@ export function deleteWorkout(id) {
       method: 'DELETE'
     })
       .then(resp => {
-        console.log(resp)
         dispatch({type: 'DELETE_WORKOUT', id: parseInt(id)})
       })
-      .then(() => callback)
   }
 }
 
