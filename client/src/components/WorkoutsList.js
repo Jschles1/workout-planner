@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Table, Button, Icon } from 'semantic-ui-react';
 
+// Stateless Component
 const WorkoutsList = (props) => {
   const { deleteWorkout, workouts } = props;
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Table, Button, Icon } from 'semantic-ui-react';
 
+// Stateless Component
 const ExerciseList = (props) => {
   const { exercises, workoutId, deleteExercise } = props;
 

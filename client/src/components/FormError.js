@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Stateless Component
 const FormError = () => {
   const errorStyles = { color: 'red' }
   return(

@@ -2,6 +2,7 @@ import React from 'react';
 import { Menu, Icon } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 
+// Stateless Component
 const Navbar = () => {
   return (
     <div>

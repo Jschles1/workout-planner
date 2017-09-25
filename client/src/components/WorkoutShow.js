@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import ExerciseForm from './ExerciseForm';
 import ExerciseList from './ExerciseList';
 
+// Container Component
 class WorkoutShow extends React.Component {
 
   componentDidMount() {

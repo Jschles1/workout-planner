@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Label, Input } from 'semantic-ui-react';
 
+// Stateless Component
 const FormInput = (props) => {
   const { labelName, inputName, inputType, inputValue, inputSize, inputPlaceholder, updateField } = props;
   return(
