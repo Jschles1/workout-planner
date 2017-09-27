@@ -8,3 +8,13 @@ class suggestedWorkoutsPage extends React.Component {
     <div></div>
   }
 }
+
+const mapStateToProps = (state) => {
+  return { workouts: state.workouts };
+}
+
+const mapDispactchToProps = (dispatch) => {
+  return { actions: bindActionCreators(actions, dispatch) }
+}
+
+export default connect(mapStateToProps, mapDispactchToProps)(WorkoutsPage);
