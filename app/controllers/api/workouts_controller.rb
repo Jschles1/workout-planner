@@ -1,5 +1,5 @@
 class API::WorkoutsController < ApplicationController
-  before_action :set_workout
+  before_action :set_workout, only: [:show, :update, :destroy]
   
   def index
     @workouts = Workout.all
