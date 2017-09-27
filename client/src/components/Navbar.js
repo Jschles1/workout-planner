@@ -13,6 +13,7 @@ const Navbar = () => {
         </Menu.Item>
         <Menu.Item as={NavLink} to='/workouts' name="Workouts"/>
         <Menu.Item as={NavLink} to='/workouts/new' name="Create New Workout"/>
+        <Menu.Item as={NavLink} to='/help' name="Help"/>
       </Menu>
       <br/>
     </div>

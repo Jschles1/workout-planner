@@ -7,6 +7,7 @@ import Welcome from './components/Welcome';
 import WorkoutsPage from './components/WorkoutsPage';
 import WorkoutsForm from './components/WorkoutsForm';
 import WorkoutShow from './components/WorkoutShow';
+import suggestedWorkoutsPage from './components/suggestedWorkoutsPage';
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
             <Navbar/>
             <Container>
               <Route exact path="/" component={Welcome}/>
+              <Route exact path="/help" component={suggestedWorkoutsPage}/>
               <Route exact path="/workouts" component={WorkoutsPage}/>
               <Switch>
                 <Route exact path="/workouts/new" component={WorkoutsForm}/>

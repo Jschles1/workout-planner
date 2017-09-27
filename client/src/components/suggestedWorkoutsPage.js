@@ -17,4 +17,4 @@ const mapDispactchToProps = (dispatch) => {
   return { actions: bindActionCreators(actions, dispatch) }
 }
 
-export default connect(mapStateToProps, mapDispactchToProps)(WorkoutsPage);
+export default connect(mapStateToProps, mapDispactchToProps)(suggestedWorkoutsPage);
