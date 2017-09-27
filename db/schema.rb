@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170927001840) do
+ActiveRecord::Schema.define(version: 20170927010218) do
 
   create_table "exercises", force: :cascade do |t|
     t.string "name"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20170927001840) do
     t.datetime "updated_at", null: false
     t.string "workout_type"
     t.boolean "suggested", default: false
+    t.string "info_url"
   end
 
 end
