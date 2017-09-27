@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/workoutActions';
 import { bindActionCreators } from 'redux';
+import suggestedWorkoutsList from './suggestedWorkoutsList'
 
 class suggestedWorkoutsPage extends React.Component {
 
@@ -10,11 +11,13 @@ class suggestedWorkoutsPage extends React.Component {
   }
 
   handleAddToWorkoutList = (event) => {
-    
+
   }
 
   return() {
-    <div></div>
+    <div>
+      <suggestedWorkoutsList workouts={this.props.workouts} addWorkout={(event) => this.handleAddToWorkoutList(event)}/>
+    </div>
   }
 }
 
