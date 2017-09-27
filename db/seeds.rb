@@ -48,5 +48,16 @@ Workout.create(id: 4,
   Exercise.create(workout_id: 4, name: "Bent Over Row (10% lighter than workout A)", reps: 5, sets: 5, rest_period: 5)
   Exercise.create(workout_id: 4, name: "Close Grip Bench Press", reps: 8, sets: 3, rest_period: 2)
   Exercise.create(workout_id: 4, name: "Straight Bar or Inline Curls", reps: 8, sets: 3, rest_period: 2)
-  Exercise.create(workout_id: 4, name: "Cable Crunches", reps: 10, sets: 3, rest_period: 2)   
+  Exercise.create(workout_id: 4, name: "Cable Crunches", reps: 10, sets: 3, rest_period: 2)
+  
+Workout.create(id: 5,
+              title: "Women's Bodyweight Circuit",
+              workout_type: "Bodyweight",
+              suggested: true,
+              info_url: "https://www.muscleandstrength.com/workouts/2-at-home-circuit-workouts-for-women")
+  Exercise.create(workout_id: 5, name: "Bodyweight Squats", reps: 10, sets: 3, rest_period: 0)
+  Exercise.create(workout_id: 5, name: "Pushups", reps: 10, sets: 3, rest_period: 0)
+  Exercise.create(workout_id: 5, name: "Bodyweight Lunge", reps: 10, sets: 3, rest_period: 0)
+  Exercise.create(workout_id: 5, name: "Chin Up or Resistance Band Pull Down", reps: 10, sets: 3, rest_period: 0)
+  Exercise.create(workout_id: 5, name: "Tricep Bench Dip", reps: 10, sets: 3, rest_period: 0)
 
