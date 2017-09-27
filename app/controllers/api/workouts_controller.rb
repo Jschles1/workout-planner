@@ -1,11 +1,12 @@
 class API::WorkoutsController < ApplicationController
+  before_action :set_workout
+  
   def index
     @workouts = Workout.all
     render json: @workouts, status: 200
   end
 
   def show
-    @workout = Workout.find(params[:id])
     render json: @workout, status: 200
   end
 
@@ -18,14 +19,26 @@ class API::WorkoutsController < ApplicationController
     end
   end
 
+  def update
+    @workout.update(workout_params)
+    if @workout.save
+      render json: @workout, status: 200
+    else
+      render json: { errors: @workout.errors }, status: 422
+    end
+  end
+
   def destroy
-    @workout = Workout.find(params[:id])
     @workout.destroy
   end
 
   private
 
   def workout_params
-    params.require(:workout).permit(:title, :workout_type)
+    params.require(:workout).permit(:title, :workout_type, :suggested)
+  end
+
+  def set_workout
+    @workout = Workout.find(params[:id])
   end
 end
