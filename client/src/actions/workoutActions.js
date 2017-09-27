@@ -41,7 +41,7 @@ export function submitNewWorkout(data, history, errorCallback) {
   }
 }
 
-export function addSuggestedWorkout(id, callback) {
+export function addSuggestedWorkout(id, fetchCallback, callback) {
   return function(dispatch) {
     return fetch(`/api/workouts/${id}`, {
       method: 'PATCH',
@@ -51,6 +51,7 @@ export function addSuggestedWorkout(id, callback) {
       body: JSON.stringify({ suggested: false })
     })
       .then(resp => resp.json())
+      .then(fetchCallback)
       .then(callback())
   }
 }
