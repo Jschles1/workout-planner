@@ -7,7 +7,7 @@ import Welcome from './components/Welcome';
 import WorkoutsPage from './components/WorkoutsPage';
 import WorkoutsForm from './components/WorkoutsForm';
 import WorkoutShow from './components/WorkoutShow';
-import suggestedWorkoutsPage from './components/suggestedWorkoutsPage';
+import SuggestedWorkoutsPage from './components/SuggestedWorkoutsPage';
 
 class App extends Component {
   render() {
@@ -23,7 +23,7 @@ class App extends Component {
                 <Route exact path="/workouts/new" component={WorkoutsForm}/>
                 <Route path="/workouts/:workoutId" component={WorkoutShow}/>
               </Switch>
-              <Route exact path="/help" component={suggestedWorkoutsPage}/>
+              <Route exact path="/help" component={SuggestedWorkoutsPage}/>
             </Container>
           </div>
         </Router>
