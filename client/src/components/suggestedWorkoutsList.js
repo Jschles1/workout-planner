@@ -1,25 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Table, Button, Icon } from 'semantic-ui-react';
+import { Table, Button, Icon, Message } from 'semantic-ui-react';
 
 const SuggestedWorkoutsList = (props) => {
-  const { addWorkout, workouts } = props;
+  const { addWorkout, addedWorkout, workouts } = props;
 
   const renderSuggestedWorkouts = workouts.map(workout => {
     return(
       <Table.Row key={workout.id}>
-        <Table.Cell>{workout.title}</Table.Cell>
+        <Table.Cell><a href={workout.info_url} target="_blank">{workout.title}</a></Table.Cell>
         <Table.Cell>{workout.workout_type}</Table.Cell>
         <Table.Cell>
-          <Button fluid as={Link} to={`/workouts/${workout.id}`} content="View Workout" color="green" icon="right arrow" labelPosition="right"/>
+          <Button fluid id={workout.id} value={workout.title} onClick={addWorkout} content="Add To Workouts List" color="green" icon="right arrow" labelPosition="right"/>
         </Table.Cell>
       </Table.Row>
     );
   })
+
   
   return(
     <div>
-      <h1>Workouts:</h1>
+      {(addedWorkout !== '') ? <Message>{addedWorkout} has been added to your Workouts List!</Message> : null}
+      <h1>Suggested Workouts:</h1>
       <Table celled>
           <Table.Header>
             <Table.Row>
