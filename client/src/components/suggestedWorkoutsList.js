@@ -20,6 +20,9 @@ const SuggestedWorkoutsList = (props) => {
   
   return(
     <div>
+      <h4>On this page you will find a list of workouts of different varieties tailored towards beginners.</h4>
+      <h4>Clicking on the workout title will open a new page containing more information about that workout.</h4>
+      <h4>Click the "Add To Workouts List" to add the selected workout to your workouts list, which you can access by clicking the "Workouts" button.</h4>
       {(addedWorkout !== '') ? <Message>{addedWorkout} has been added to your Workouts List!</Message> : null}
       <h1>Suggested Workouts:</h1>
       <Table celled>
@@ -34,6 +37,7 @@ const SuggestedWorkoutsList = (props) => {
             {(workouts) ? renderSuggestedWorkouts : null}
           </Table.Body>
       </Table>
+      <br/>
     </div>
   );
 }
