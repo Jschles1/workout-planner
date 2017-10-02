@@ -12,7 +12,7 @@ class WorkoutsPage extends React.Component {
   }
 
   handleDeleteClick = (event) => {
-    const id = (event.target.id)
+    const id = event.target.id
     this.props.actions.deleteWorkout(id);
   }
   
