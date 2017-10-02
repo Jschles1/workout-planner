@@ -4,10 +4,10 @@ import './App.css';
 import { Container } from 'semantic-ui-react';
 import Navbar from './components/Navbar';
 import Welcome from './components/Welcome';
-import WorkoutsPage from './components/WorkoutsPage';
-import WorkoutsForm from './components/WorkoutsForm';
-import WorkoutShow from './components/WorkoutShow';
-import SuggestedWorkoutsPage from './components/SuggestedWorkoutsPage';
+import WorkoutsPage from './components/containers/WorkoutsPage';
+import WorkoutsForm from './components/containers/WorkoutsForm';
+import WorkoutShow from './components/containers/WorkoutShow';
+import SuggestedWorkoutsPage from './components/containers/SuggestedWorkoutsPage';
 
 class App extends Component {
   render() {

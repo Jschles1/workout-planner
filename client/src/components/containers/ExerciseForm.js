@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../actions/exerciseActions';
+import * as actions from '../../actions/exerciseActions';
 import { bindActionCreators } from 'redux';
 import { Form, Button, Segment } from 'semantic-ui-react';
-import FormInput from './FormInput';
-import FormError from './FormError';
+import FormInput from '../FormInput';
+import FormError from '../FormError';
 
 class ExerciseForm extends React.Component {
   constructor(props) {

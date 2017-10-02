@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../actions/workoutActions';
+import * as actions from '../../actions/workoutActions';
 import { bindActionCreators } from 'redux';
-import WorkoutsList from './WorkoutsList'
+import WorkoutsList from '../WorkoutsList'
 
 // Container Component
 class WorkoutsPage extends React.Component {
