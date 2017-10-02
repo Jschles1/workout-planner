@@ -14,7 +14,7 @@ class SuggestedWorkoutsPage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.actions.fetchSuggestedWorkouts()
+    this.props.actions.fetchWorkouts()
   }
 
   handleAddToWorkoutList = (event) => {

@@ -9,15 +9,6 @@ export function fetchWorkouts() {
   }
 }
 
-export function fetchSuggestedWorkouts() {
-  return function(dispatch) {
-    dispatch({type: 'LOADING_WORKOUTS'})
-    return fetch(`/api/workouts`)
-      .then(resp => resp.json())
-      .then(workouts => dispatch({type: 'FETCH_SUGGESTED_WORKOUTS', payload: workouts}))
-  }
-}
-
 export function submitNewWorkout(data, history) {
   return function(dispatch) {
     return fetch(`/api/workouts`, {
