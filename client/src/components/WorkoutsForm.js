@@ -26,11 +26,7 @@ class WorkoutsForm extends React.Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault();
-    this.props.actions.submitNewWorkout(this.state, this.props.history, (() => {
-      this.setState({
-        error: true
-      });
-    }));
+    this.props.actions.submitNewWorkout(this.state, this.props.history);
     this.setState({
       title: '',
       workout_type: ''
@@ -45,7 +41,7 @@ class WorkoutsForm extends React.Component {
     return(
       <Segment style={formStyles} raised>
         <h1>Create a New Workout:</h1>
-        {this.state.error === true ? <FormError/> : null}
+        {this.props.errors === true ? <FormError/> : null}
         <Form onSubmit={(event) => this.handleOnSubmit(event)}>
           <FormInput 
             labelName="Workout Title:" 
@@ -73,7 +69,7 @@ class WorkoutsForm extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { workouts: state.workouts }
+  return { workouts: state.workouts, errors: state.errors }
 }
 
 const mapDispactchToProps = (dispatch) => {

@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
   exercises: exercisesReducer,
   loadingWorkouts: loadingWorkoutsReducer ,
   loadingExercises: loadingExercisesReducer,
-  errorsReducer: errorsReducer
+  errors: errorsReducer
 });
 
 export default rootReducer;

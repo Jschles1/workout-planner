@@ -18,7 +18,7 @@ export function fetchSuggestedWorkouts() {
   }
 }
 
-export function submitNewWorkout(data, history, errorCallback) {
+export function submitNewWorkout(data, history) {
   return function(dispatch) {
     return fetch(`/api/workouts`, {
       method: 'POST',
@@ -36,7 +36,7 @@ export function submitNewWorkout(data, history, errorCallback) {
         history.push('/workouts');
       })
     .catch((error) => {
-      errorCallback()
+      dispatch({type: 'ERROR'})
     })
   }
 }
