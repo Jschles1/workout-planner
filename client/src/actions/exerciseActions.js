@@ -9,7 +9,7 @@ export function fetchExercises(workoutId) {
   }
 }
 
-export function submitNewExercise(data, workoutId, errorCallback) {
+export function submitNewExercise(data, workoutId) {
   return function(dispatch) {
     return fetch(`/api/workouts/${workoutId}/exercises`, {
       method: 'POST',
@@ -26,7 +26,7 @@ export function submitNewExercise(data, workoutId, errorCallback) {
         dispatch({type: 'ADD_EXERCISE', payload: exercise});
       })
     .catch((error) => {
-      errorCallback()
+      dispatch({type: 'ERROR'})
     })
   }
 }

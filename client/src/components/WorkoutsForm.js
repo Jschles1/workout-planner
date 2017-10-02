@@ -12,8 +12,7 @@ class WorkoutsForm extends React.Component {
 
     this.state = {
       title: '',
-      workout_type: '',
-      error: false
+      workout_type: ''
     }
   }
 
