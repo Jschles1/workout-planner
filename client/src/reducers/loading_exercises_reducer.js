@@ -4,6 +4,8 @@ export default function loadingExercisesReducer(state = false, action) {
       return true
     case 'FETCH_EXERCISES':
       return false
+    case 'ERROR':
+      return false
     default:
       return state
   }
