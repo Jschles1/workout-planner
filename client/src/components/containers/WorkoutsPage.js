@@ -19,7 +19,7 @@ class WorkoutsPage extends React.Component {
   render() {
     return(
       <div>
-        <WorkoutsList workouts={this.props.workouts} deleteWorkout={(event) => this.handleDeleteClick(event)}/>
+        <WorkoutsList workouts={this.props.workouts} deleteWorkout={this.handleDeleteClick}/>
       </div>
     );
   }

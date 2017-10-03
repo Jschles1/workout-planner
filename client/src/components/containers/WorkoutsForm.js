@@ -41,7 +41,7 @@ class WorkoutsForm extends React.Component {
       <Segment style={formStyles} raised>
         <h1>Create a New Workout:</h1>
         {this.props.errors === true ? <FormError/> : null}
-        <Form onSubmit={(event) => this.handleOnSubmit(event)}>
+        <Form onSubmit={this.handleOnSubmit}>
           <FormInput 
             labelName="Workout Title:" 
             inputValue={this.state.title} 
@@ -49,7 +49,7 @@ class WorkoutsForm extends React.Component {
             inputType="text"
             inputName="title" 
             inputPlaceholder="Workout Title" 
-            updateField={(event) => this.handleOnChange(event)}
+            updateField={this.handleOnChange}
           />
           <FormInput 
             labelName="Workout Type:" 
@@ -58,7 +58,7 @@ class WorkoutsForm extends React.Component {
             inputType="text"
             inputName="workout_type" 
             inputPlaceholder="Workout Type" 
-            updateField={(event) => this.handleOnChange(event)}
+            updateField={this.handleOnChange}
           />
           <Button fluid color="black" content="Submit" type="submit" icon="right arrow" labelPosition="right"/>
         </Form>

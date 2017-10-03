@@ -32,7 +32,7 @@ class SuggestedWorkoutsPage extends React.Component {
       <div>
         <SuggestedWorkoutsList 
           workouts={this.props.workouts} 
-          addWorkout={(event) => this.handleAddToWorkoutList(event)} 
+          addWorkout={this.handleAddToWorkoutList} 
           addedWorkout={this.state.addedWorkout}
         />
       </div>

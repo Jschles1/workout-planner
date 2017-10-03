@@ -46,7 +46,7 @@ class ExerciseForm extends React.Component {
       <Segment style={formStyles} raised>
         <h3>Add an Exercise to this Workout:</h3>
         {this.props.errors === true ? <FormError/> : null}
-        <Form size="mini" onSubmit={(event) => this.handleOnSubmit(event)}>
+        <Form size="mini" onSubmit={this.handleOnSubmit}>
           <FormInput 
             labelName="Name:" 
             inputValue={this.state.name} 
@@ -54,7 +54,7 @@ class ExerciseForm extends React.Component {
             inputType="text"
             inputName="name" 
             inputPlaceholder="Name" 
-            updateField={(event) => this.handleOnChange(event)}
+            updateField={this.handleOnChange}
           />
           <FormInput 
             labelName="Repetitions:" 
@@ -63,7 +63,7 @@ class ExerciseForm extends React.Component {
             inputType="number"
             inputName="reps" 
             inputPlaceholder="Repetitions" 
-            updateField={(event) => this.handleOnChange(event)}
+            updateField={this.handleOnChange}
           />
           <FormInput 
             labelName="Number Of Sets:" 
@@ -72,7 +72,7 @@ class ExerciseForm extends React.Component {
             inputType="number"
             inputName="sets" 
             inputPlaceholder="Number Of Sets" 
-            updateField={(event) => this.handleOnChange(event)}
+            updateField={this.handleOnChange}
           />
           <FormInput 
             labelName="Rest Period Between Sets:" 
@@ -81,7 +81,7 @@ class ExerciseForm extends React.Component {
             inputType="number"
             inputName="rest_period" 
             inputPlaceholder="Rest Period Between Sets" 
-            updateField={(event) => this.handleOnChange(event)}
+            updateField={this.handleOnChange}
           />
           <Button fluid color="black" content="Submit" type="submit" icon="right arrow" labelPosition="right"/>
         </Form>
