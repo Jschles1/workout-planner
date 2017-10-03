@@ -5,8 +5,8 @@ import { Table, Button, Icon } from 'semantic-ui-react';
 // Stateless Component
 const WorkoutsList = (props) => {
   const { deleteWorkout, workouts } = props;
-  const myWorkouts = workouts.filter(workout => workout.suggested === false);
-  const renderWorkouts = myWorkouts.map(workout => {
+  
+  const renderWorkouts = workouts.map(workout => {
     return(
       <Table.Row key={workout.id}>
         <Table.Cell>{workout.title}</Table.Cell>

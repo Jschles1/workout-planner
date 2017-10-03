@@ -14,13 +14,13 @@ class SuggestedWorkoutsPage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.actions.fetchWorkouts()
+    this.props.actions.fetchSuggestedWorkouts()
   }
 
   handleAddToWorkoutList = (event) => {
     const id = event.target.id;
     const title = event.target.value;
-    this.props.actions.addSuggestedWorkout(id, this.props.actions.fetchWorkouts(), (() => {
+    this.props.actions.addSuggestedWorkout(id, this.props.actions.fetchSuggestedWorkouts, (() => {
       this.setState({
         addedWorkout: title
       });

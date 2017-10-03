@@ -4,8 +4,8 @@ import { Table, Button, Icon, Message } from 'semantic-ui-react';
 
 const SuggestedWorkoutsList = (props) => {
   const { addWorkout, addedWorkout, workouts } = props;
-  const suggested = workouts.filter(workout => workout.suggested === true);
-  const renderSuggestedWorkouts = suggested.map(workout => {
+  
+  const renderSuggestedWorkouts = workouts.map(workout => {
     return(
       <Table.Row key={workout.id}>
         <Table.Cell><a href={workout.info_url} target="_blank">{workout.title}</a></Table.Cell>
