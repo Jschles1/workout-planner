@@ -50,7 +50,6 @@ export function addSuggestedWorkout(id, fetchCallback, callback) {
       },
       body: JSON.stringify({ suggested: false })
     })
-      .then(resp => resp.json())
       .then(fetchCallback())
       .then(callback())
   }

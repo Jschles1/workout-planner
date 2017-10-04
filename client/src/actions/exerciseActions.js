@@ -37,7 +37,7 @@ export function deleteExercise(workoutId, id) {
       method: 'DELETE'
     })
       .then(resp => {
-        dispatch({type: 'DELETE_EXERCISE', workoutId: workoutId, id: parseInt(id)})
+        dispatch({type: 'DELETE_EXERCISE', id: parseInt(id)})
       })
   }
 }
