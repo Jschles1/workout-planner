@@ -1,11 +1,9 @@
 export default function workoutsReducer(state = [], action) {
   switch(action.type) {
     case 'FETCH_WORKOUTS':
-      const workouts = action.payload.filter(workout => workout.suggested === false);
-      return workouts;
+      return action.payload.filter(workout => workout.suggested === false);
     case 'FETCH_SUGGESTED_WORKOUTS':
-      const suggestedWorkouts = action.payload.filter(workout => workout.suggested === true);
-      return suggestedWorkouts;
+      return action.payload.filter(workout => workout.suggested === true);
     case 'ADD_WORKOUT':
       return state.concat(action.payload);
     case 'DELETE_WORKOUT':

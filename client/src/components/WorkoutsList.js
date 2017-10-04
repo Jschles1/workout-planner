@@ -12,7 +12,7 @@ const WorkoutsList = (props) => {
         <Table.Cell>{workout.title}</Table.Cell>
         <Table.Cell>{workout.workout_type}</Table.Cell>
         <Table.Cell>
-          <Button fluid as={Link} to={`/workouts/${workout.id}`} content="View Workout" color="green" icon="right arrow" labelPosition="right"/>
+          <Button fluid as={Link} to={`/workouts/${workout.id}`} content="View Workout Exercises" color="green" icon="right arrow" labelPosition="right"/>
         </Table.Cell>
         <Table.Cell>
           <Button fluid id={workout.id} onClick={deleteWorkout} content="Delete Workout" color="red"/>
