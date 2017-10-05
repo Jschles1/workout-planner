@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Table, Button, Icon, Message } from 'semantic-ui-react';
 
 const SuggestedWorkoutsList = (props) => {
-  const { addWorkout, addedWorkout, workouts } = props;
+  const { addWorkout, addedWorkout, addLike, workouts } = props;
   
   const renderSuggestedWorkouts = workouts.map(workout => {
     return(
@@ -12,6 +12,10 @@ const SuggestedWorkoutsList = (props) => {
         <Table.Cell>{workout.workout_type}</Table.Cell>
         <Table.Cell>
           <Button fluid id={workout.id} value={workout.title} onClick={addWorkout} content="Add To Workouts List" color="green" icon="right arrow" labelPosition="right"/>
+        </Table.Cell>
+        <Table.Cell>{workout.likes}</Table.Cell>
+        <Table.Cell>
+          <Button fluid id={workout.id} value="Like" onClick={addLike} content="+" color="green" />
         </Table.Cell>
       </Table.Row>
     );
@@ -31,6 +35,7 @@ const SuggestedWorkoutsList = (props) => {
               <Table.HeaderCell>Title:</Table.HeaderCell>
               <Table.HeaderCell>Type:</Table.HeaderCell>
               <Table.HeaderCell>Options:</Table.HeaderCell>
+              <Table.HeaderCell>Likes:</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
           <Table.Body>
