@@ -1,5 +1,24 @@
 import fetch from 'isomorphic-fetch';
 
+export function addLike(workout, newLike, id) {
+  console.log(newLike)
+  return function(dispatch) {
+    return fetch(`/api/workouts/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({ likes: newLike })
+    })
+      .then(resp => {
+        return resp.json();
+      })
+      .then(workout => {
+        dispatch({type: 'ADD_LIKE', payload: workout});
+      })
+  }
+}
+
 export function fetchWorkouts() {
   return function(dispatch) {
     dispatch({type: 'LOADING_WORKOUTS'})

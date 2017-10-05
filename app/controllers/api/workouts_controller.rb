@@ -35,7 +35,7 @@ class API::WorkoutsController < ApplicationController
   private
 
   def workout_params
-    params.require(:workout).permit(:title, :workout_type, :suggested)
+    params.require(:workout).permit(:title, :workout_type, :suggested, :likes)
   end
 
   def set_workout
