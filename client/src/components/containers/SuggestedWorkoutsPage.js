@@ -19,7 +19,7 @@ class SuggestedWorkoutsPage extends React.Component {
 
   handleAddToWorkoutList = (event) => {
     const { id, value } = event.target
-    this.props.actions.addSuggestedWorkout(id, this.props.actions.fetchSuggestedWorkouts, (() => {
+    this.props.actions.addSuggestedWorkout(id, (() => {
       this.setState({
         addedWorkout: value
       });
