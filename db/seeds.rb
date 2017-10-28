@@ -61,3 +61,19 @@ Workout.create(id: 5,
   Exercise.create(workout_id: 5, name: "Chin Up or Resistance Band Pull Down", reps: 10, sets: 3, rest_period: 0)
   Exercise.create(workout_id: 5, name: "Tricep Bench Dip", reps: 10, sets: 3, rest_period: 0)
 
+Workout.create(id: 6,
+               title: "8 Week Novice Quick Start Workout Plan",
+               workout_type: "Full Body",
+               suggested: true,
+               info_url: "https://www.muscleandstrength.com/workouts/8-week-novice-quick-start-workout-plan")
+  Exercise.create(workout_id: 6, name: "Squat", reps: 12, sets: 2, rest_period: 2)
+  Exercise.create(workout_id: 6, name: "Bench Press", reps: 12, sets: 2, rest_period: 2)
+  Exercise.create(workout_id: 6, name: "Deadlift", reps: 12, sets: 2, rest_period: 2)
+  Exercise.create(workout_id: 6, name: "Military Press", reps: 12, sets: 2, rest_period: 2)
+  Exercise.create(workout_id: 6, name: "Barbell Row", reps: 12, sets: 2, rest_period: 2)
+  Exercise.create(workout_id: 6, name: "Cable Tricep Extension", reps: 12, sets: 2, rest_period: 2)
+  Exercise.create(workout_id: 6, name: "Lat Pulldown to Chest", reps: 12, sets: 2, rest_period: 2)
+  Exercise.create(workout_id: 6, name: "Barbell Curl", reps: 12, sets: 2, rest_period: 2)
+  Exercise.create(workout_id: 6, name: "Seated Calf Raise", reps: 12, sets: 2, rest_period: 2)
+  Exercise.create(workout_id: 6, name: "Sit Ups", reps: 12, sets: 2, rest_period: 2)
+
