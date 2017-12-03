@@ -17,6 +17,7 @@ class SuggestedWorkoutsPage extends React.Component {
     this.props.actions.fetchSuggestedWorkouts()
   }
 
+  // Modifies workout suggested attribute by calling addSuggestedWorkout action creator
   handleAddToWorkoutList = (event) => {
     const { id, value } = event.target
     this.props.actions.addSuggestedWorkout(id, (() => {

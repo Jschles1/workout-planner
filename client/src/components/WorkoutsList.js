@@ -6,6 +6,7 @@ import { Table, Button, Icon } from 'semantic-ui-react';
 const WorkoutsList = (props) => {
   const { deleteWorkout, workouts } = props;
   
+  // Renders each workout in a table row format
   const renderWorkouts = workouts.map(workout => {
     return(
       <Table.Row key={workout.id}>

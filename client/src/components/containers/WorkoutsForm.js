@@ -16,6 +16,7 @@ class WorkoutsForm extends React.Component {
     }
   }
 
+  // Updates state of component when new input is entered
   handleOnChange = (event) => {
     const { name, value } = event.target; 
     this.setState({
@@ -23,6 +24,7 @@ class WorkoutsForm extends React.Component {
     })
   }
 
+  // Invokes submitNewWorkout action creator
   handleOnSubmit = (event) => {
     this.props.actions.submitNewWorkout(this.state, this.props.history);
   }
@@ -66,7 +68,9 @@ const mapStateToProps = (state) => {
   return { workouts: state.workouts, errors: state.errors }
 }
 
+// Provides action creators as props to WorkoutsForm
 const mapDispactchToProps = (dispatch) => {
+  // Allows us to dispatch actions to the store
   return { actions: bindActionCreators(actions, dispatch) }
 }
 

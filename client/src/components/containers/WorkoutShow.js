@@ -12,6 +12,7 @@ class WorkoutShow extends React.Component {
     this.props.actions.fetchExercises(this.props.workout.id);
   }
 
+  // Invokes deleteExercise action creator
   handleDeleteClick = (event) => {
     const id = (event.target.id)
     this.props.actions.deleteExercise(this.props.workout.id, id);
@@ -33,6 +34,7 @@ class WorkoutShow extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+  // Find workout with id that matches url params provided by react router match prop
   const workout = state.workouts.find(workout => workout.id === parseInt(ownProps.match.params.workoutId), 10);
   
   if (workout) {

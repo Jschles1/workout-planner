@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// Implement for client-side routing
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import { Container } from 'semantic-ui-react';
