@@ -16,15 +16,15 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
-            <Navbar/>
+            <Navbar />
             <Container>
-              <Route exact path="/" component={Welcome}/>
-              <Route exact path="/workouts" component={WorkoutsPage}/>
+              <Route exact path="/" component={Welcome} />
+              <Route exact path="/workouts" component={WorkoutsPage} />
               <Switch>
-                <Route exact path="/workouts/new" component={WorkoutsForm}/>
-                <Route path="/workouts/:workoutId" component={WorkoutShow}/>
+                <Route exact path="/workouts/new" component={WorkoutsForm} />
+                <Route path="/workouts/:workoutId" component={WorkoutShow} />
               </Switch>
-              <Route exact path="/help" component={SuggestedWorkoutsPage}/>
+              <Route exact path="/help" component={SuggestedWorkoutsPage} />
             </Container>
           </div>
         </Router>

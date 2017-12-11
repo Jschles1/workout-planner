@@ -44,7 +44,7 @@ class ExerciseForm extends React.Component {
     return(
       <Segment style={formStyles} raised>
         <h3>Add an Exercise to this Workout:</h3>
-        {this.props.errors === true ? <FormError/> : null}
+        {this.props.errors === true ? <FormError /> : null}
         <Form size="mini" onSubmit={this.handleOnSubmit}>
           <FormInput 
             labelName="Name:" 
@@ -82,7 +82,7 @@ class ExerciseForm extends React.Component {
             inputPlaceholder="Rest Period Between Sets" 
             updateField={this.handleOnChange}
           />
-          <Button fluid color="black" content="Submit" type="submit" icon="right arrow" labelPosition="right"/>
+          <Button fluid color="black" content="Submit" type="submit" icon="right arrow" labelPosition="right" />
         </Form>
       </Segment>
     );

@@ -13,10 +13,10 @@ const WorkoutsList = (props) => {
         <Table.Cell>{workout.title}</Table.Cell>
         <Table.Cell>{workout.workout_type}</Table.Cell>
         <Table.Cell>
-          <Button fluid as={Link} to={`/workouts/${workout.id}`} content="View Workout Exercises" color="green" icon="right arrow" labelPosition="right"/>
+          <Button fluid as={Link} to={`/workouts/${workout.id}`} content="View Workout Exercises" color="green" icon="right arrow" labelPosition="right" />
         </Table.Cell>
         <Table.Cell>
-          <Button fluid id={workout.id} onClick={deleteWorkout} content="Delete Workout" color="red"/>
+          <Button fluid id={workout.id} onClick={deleteWorkout} content="Delete Workout" color="red" />
         </Table.Cell>
       </Table.Row>
     );
@@ -26,16 +26,16 @@ const WorkoutsList = (props) => {
     <div>
       <h1>Workouts:</h1>
       <Table celled>
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell>Title:</Table.HeaderCell>
-              <Table.HeaderCell>Type:</Table.HeaderCell>
-              <Table.HeaderCell colSpan="2">Options:</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-          <Table.Body>
-            {(workouts) ? renderWorkouts : null}
-          </Table.Body>
+        <Table.Header>
+          <Table.Row>
+            <Table.HeaderCell>Title:</Table.HeaderCell>
+            <Table.HeaderCell>Type:</Table.HeaderCell>
+            <Table.HeaderCell colSpan="2">Options:</Table.HeaderCell>
+          </Table.Row>
+        </Table.Header>
+        <Table.Body>
+          {(workouts) ? renderWorkouts : null}
+        </Table.Body>
       </Table>
     </div>
   );

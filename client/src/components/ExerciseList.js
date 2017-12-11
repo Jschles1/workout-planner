@@ -15,7 +15,7 @@ const ExerciseList = (props) => {
         <Table.Cell>{exercise.sets}</Table.Cell>
         <Table.Cell>{exercise.rest_period}</Table.Cell>
         <Table.Cell>
-          <Button fluid id={exercise.id} onClick={deleteExercise} content="Delete Exercise" color="red"/>
+          <Button fluid id={exercise.id} onClick={deleteExercise} content="Delete Exercise" color="red" />
         </Table.Cell>
       </Table.Row>
     );

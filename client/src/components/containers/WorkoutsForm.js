@@ -37,7 +37,7 @@ class WorkoutsForm extends React.Component {
     return(
       <Segment style={formStyles} raised>
         <h1>Create a New Workout:</h1>
-        {this.props.errors === true ? <FormError/> : null}
+        {this.props.errors === true ? <FormError /> : null}
         <Form onSubmit={this.handleOnSubmit}>
           <FormInput 
             labelName="Workout Title:" 
@@ -57,7 +57,7 @@ class WorkoutsForm extends React.Component {
             inputPlaceholder="Workout Type" 
             updateField={this.handleOnChange}
           />
-          <Button fluid color="black" content="Submit" type="submit" icon="right arrow" labelPosition="right"/>
+          <Button fluid color="black" content="Submit" type="submit" icon="right arrow" labelPosition="right" />
         </Form>
       </Segment>
     );

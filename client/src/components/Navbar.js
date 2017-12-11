@@ -9,11 +9,11 @@ const Navbar = () => {
       <Menu inverted>
         <Menu.Item header>Workout Planner</Menu.Item>
         <Menu.Item as={Link} to='/'>
-          <Icon name="home"/> 
+          <Icon name="home" /> 
         </Menu.Item>
-        <Menu.Item as={Link} to='/workouts' name="Workouts"/>
-        <Menu.Item as={Link} to='/workouts/new' name="Create New Workout"/>
-        <Menu.Item as={Link} to='/help' name="Help"/>
+        <Menu.Item as={Link} to='/workouts' name="Workouts" />
+        <Menu.Item as={Link} to='/workouts/new' name="Create New Workout" />
+        <Menu.Item as={Link} to='/help' name="Help" />
         <Menu.Item position="right">
           &copy; John Schlesinger
         </Menu.Item>
