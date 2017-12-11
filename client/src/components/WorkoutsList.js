@@ -30,7 +30,7 @@ const WorkoutsList = (props) => {
           <Table.Row>
             <Table.HeaderCell>Title:</Table.HeaderCell>
             <Table.HeaderCell>Type:</Table.HeaderCell>
-            <Table.HeaderCell colSpan="2">Options:</Table.HeaderCell>
+            <Table.HeaderCell colSpan="2" style={{textAlign: "center"}}>Options:</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>

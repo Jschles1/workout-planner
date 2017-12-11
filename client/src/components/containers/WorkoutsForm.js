@@ -39,25 +39,28 @@ class WorkoutsForm extends React.Component {
         <h1>Create a New Workout:</h1>
         {this.props.errors === true ? <FormError /> : null}
         <Form onSubmit={this.handleOnSubmit}>
-          <FormInput 
-            labelName="Workout Title:" 
-            inputValue={this.state.title} 
-            inputSize="medium" 
-            inputType="text"
-            inputName="title" 
-            inputPlaceholder="Workout Title" 
-            updateField={this.handleOnChange}
-          />
-          <FormInput 
-            labelName="Workout Type:" 
-            inputValue={this.state.workout_type} 
-            inputSize="medium" 
-            inputType="text"
-            inputName="workout_type" 
-            inputPlaceholder="Workout Type" 
-            updateField={this.handleOnChange}
-          />
+          <Form.Group widths="equal">
+            <FormInput 
+              labelName="Workout Title:" 
+              inputValue={this.state.title} 
+              inputSize="medium" 
+              inputType="text"
+              inputName="title" 
+              inputPlaceholder="Workout Title" 
+              updateField={this.handleOnChange}
+            />
+            <FormInput 
+              labelName="Workout Type:" 
+              inputValue={this.state.workout_type} 
+              inputSize="medium" 
+              inputType="text"
+              inputName="workout_type" 
+              inputPlaceholder="Workout Type" 
+              updateField={this.handleOnChange}
+            />
+          </Form.Group>
           <Button fluid color="black" content="Submit" type="submit" icon="right arrow" labelPosition="right" />
+        
         </Form>
       </Segment>
     );
