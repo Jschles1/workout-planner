@@ -36,52 +36,49 @@ class ExerciseForm extends React.Component {
   }
 
   render() {
-    const formStyles = {
-      maxWidth: 400,
-      margin: 20
-    }
-
     return(
-      <Segment style={formStyles} raised>
-        <h3>Add an Exercise to this Workout:</h3>
+      <Segment style={{margin: "20px"}} raised>
+        <h3 style={{textAlign: "center"}}>Add an Exercise to this Workout:</h3>
         {this.props.errors === true ? <FormError /> : null}
         <Form size="mini" onSubmit={this.handleOnSubmit}>
-          <FormInput 
-            labelName="Name:" 
-            inputValue={this.state.name} 
-            inputSize="small" 
-            inputType="text"
-            inputName="name" 
-            inputPlaceholder="Name" 
-            updateField={this.handleOnChange}
-          />
-          <FormInput 
-            labelName="Repetitions:" 
-            inputValue={this.state.reps} 
-            inputSize="small" 
-            inputType="number"
-            inputName="reps" 
-            inputPlaceholder="Repetitions" 
-            updateField={this.handleOnChange}
-          />
-          <FormInput 
-            labelName="Number Of Sets:" 
-            inputValue={this.state.sets} 
-            inputSize="small" 
-            inputType="number"
-            inputName="sets" 
-            inputPlaceholder="Number Of Sets" 
-            updateField={this.handleOnChange}
-          />
-          <FormInput 
-            labelName="Rest Period Between Sets:" 
-            inputValue={this.state.rest_period} 
-            inputSize="small" 
-            inputType="number"
-            inputName="rest_period" 
-            inputPlaceholder="Rest Period Between Sets" 
-            updateField={this.handleOnChange}
-          />
+          <Form.Group widths="equal">
+            <FormInput 
+              labelName="Name:" 
+              inputValue={this.state.name} 
+              inputSize="small" 
+              inputType="text"
+              inputName="name" 
+              inputPlaceholder="Name" 
+              updateField={this.handleOnChange}
+            />
+            <FormInput 
+              labelName="Repetitions:" 
+              inputValue={this.state.reps} 
+              inputSize="small" 
+              inputType="number"
+              inputName="reps" 
+              inputPlaceholder="Repetitions" 
+              updateField={this.handleOnChange}
+            />
+            <FormInput 
+              labelName="Number Of Sets:" 
+              inputValue={this.state.sets} 
+              inputSize="small" 
+              inputType="number"
+              inputName="sets" 
+              inputPlaceholder="Number Of Sets" 
+              updateField={this.handleOnChange}
+            />
+            <FormInput 
+              labelName="Rest Period Between Sets:" 
+              inputValue={this.state.rest_period} 
+              inputSize="small" 
+              inputType="number"
+              inputName="rest_period" 
+              inputPlaceholder="Rest Period Between Sets" 
+              updateField={this.handleOnChange}
+            />
+          </Form.Group>
           <Button fluid color="black" content="Submit" type="submit" icon="right arrow" labelPosition="right" />
         </Form>
       </Segment>
